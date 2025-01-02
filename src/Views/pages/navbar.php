@@ -26,7 +26,7 @@
             </li>
         </ul>
         <div class="nav-buttons">
-            <a href="#" class="btn login-btn">Log In</a>
+            <a href="../auth/login.php" class="btn login-btn">Log In</a>
             <a href="#" class="btn signup-btn">Sign Up</a>
         </div>
     </nav>
