@@ -7,3 +7,10 @@ include __DIR__ . '/pages/navbar.php';
 
 // $app = new App();
 // echo $app->greet();
+// use App\Config\Connexion;
+
+// Connexion::connexion();
+// if (Connexion::$conn!==null){
+//     echo 'nadi';
+// }
+
