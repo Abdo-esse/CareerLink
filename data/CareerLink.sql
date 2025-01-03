@@ -41,6 +41,39 @@ use CareerLink;
 
   );
    
-   CREATE Table emploi(
-    
-   )
+   CREATE Table offres_emploi(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    poste VARCHAR(250),
+    salaire FLOAT(20,2),
+    qualifications_requises VARCHAR(250),
+    lieu_travail VARCHAR(250),
+    date_create  date,
+    id_categorie int ,
+    id_recruteur int ,
+    date_delete  date,
+    Foreign Key (id_categorie) REFERENCES categories(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    Foreign Key (id_recruteur) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
+
+   );
+
+   CREATE table offre_emploi_tags(
+     id int AUTO_INCREMENT PRIMARY KEY,
+      id_offre_emploi int ,
+      id_tag int ,
+        Foreign Key ( id_offre_emploi) REFERENCES offres_emploi(id) ON DELETE CASCADE ON UPDATE CASCADE,
+       Foreign Key (id_tag) REFERENCES tags(id) ON DELETE CASCADE ON UPDATE CASCADE
+
+
+   );
+   CREATE Table emploi_candidat(
+    status VARCHAR(250),
+     id_offre_emploi int ,
+      id_candidat int ,
+      date_postulation DATETIME,
+      Foreign Key ( id_offre_emploi) REFERENCES offres_emploi(id) ON DELETE CASCADE ON UPDATE CASCADE,
+        Foreign Key (id_candidat) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+           PRIMARY KEY(id_offre_emploi,id_candidat)
+
+
+   );
+ 
