@@ -1,12 +1,17 @@
 <?php
 namespace App\classes;
+require __DIR__ . '/../../vendor/autoload.php'; 
+
+use App\Classes\Role; 
+
+
 class Utilisateur
 {
     private $id;
     private $nom ;
     private $email;
     private $password ;
-    private $role;
+    private Role $role;
 
     public function __construct( $nom , $email, $password ,$role,$id=null){
         $this->id=$id;
@@ -23,8 +28,17 @@ class Utilisateur
 
     public function inscription (){
         
+
+
     }
 
     
 
 }
+
+$role=new Role(1,'admin');
+$utilisateur=new Utilisateur( "nom" , "email", "password" ,$role,"idnull");
+print_r($utilisateur);
+echo "<br>";
+// print_r ($utilisateur->getRole()->getTitle());
+echo ($utilisateur->getRole()->getTitle());
