@@ -19,5 +19,8 @@ if(isset($_POST["SignUP"]))
     $email=$_POST["email"];
     $password=$_POST["password"];
     $passwordRepate=$_POST["passwordRepate"];
+    $role= new Role(3,"Candidat");
+    $candidat = new Candidat($name,$email,$password,$role);
     
+
 }

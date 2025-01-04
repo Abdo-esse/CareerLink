@@ -8,7 +8,7 @@ class Utilisateur
     private $password ;
     private $role;
 
-    public function __construct($id, $nom , $email, $password ,$role){
+    public function __construct( $nom , $email, $password ,$role,$id=null){
         $this->id=$id;
         $this->nom=$nom;
         $this->email=$email;
@@ -20,6 +20,11 @@ class Utilisateur
     public function getRole() { return $this->role; }
     public function getEmail() { return $this->email; }
     public function getPassword() { return $this->password; }
+
+    public function inscription (){
+        
+    }
+
     
 
 }
