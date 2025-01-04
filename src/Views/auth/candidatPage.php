@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Candidat</h1>
-    <form action="../auth/signupCandidat.php">
+    <form action="../../Controllers/auth/signupCandidat.php" method="post">
         <label for="fullName">Full name</label>
         <input type="text" required placeholder="Full name" id="fullName"><br>
         <label for="email">Email</label>

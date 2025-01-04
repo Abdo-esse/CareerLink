@@ -1,5 +1,7 @@
 <?php
 
+
+
 require __DIR__ . '/../../../vendor/autoload.php'; 
 // include __DIR__ . '/pages/navbar.php';
 
@@ -21,6 +23,7 @@ if(isset($_POST["SignUP"]))
     $passwordRepate=$_POST["passwordRepate"];
     $role= new Role(3,"Candidat");
     $candidat = new Candidat($name,$email,$password,$role);
+    $condidat->signup();
     
 
 }

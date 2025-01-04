@@ -43,7 +43,7 @@ require __DIR__ . '/../../vendor/autoload.php';
         </ul>
         <div class="nav-buttons">
             <a href="../auth/login.php" class="btn login-btn">Log In</a>
-            <a href="../pages/signupPage.php" class="btn signup-btn">Sign Up</a>
+            <a href="./pages/signupPage.php" class="btn signup-btn">Sign Up</a>
         </div>
     </nav>
 </body>

@@ -1,9 +1,10 @@
 <?php 
-require 'Connexion.php';
-Connexion::connect();
+namespace App\model;
+require __DIR__ . '/../../vendor/autoload.php';
+use App\Config\Connexion;
+
 class Crud 
 {
-  
 
       static function createAction ($table,$data){
         $columns= implode(',',array_keys($data));
