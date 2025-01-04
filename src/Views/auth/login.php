@@ -14,7 +14,7 @@
         <input type="email" id="email" required placeholder="exemple@gmail.com"><br>
         <label for="password">password</label><br>
         <input type="password" id="password" required ><br>
-        <button type="submit" name="login" ></button><br>
+       
         <input type="submit" name="login">
     </form>
 </body>
