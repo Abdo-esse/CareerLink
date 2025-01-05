@@ -42,6 +42,19 @@ class Utilisateur
     public function inscription (){
         Crud::createAction('users', $this->data);
  }
+ private function chekuserExiste()
+    {
+        $result;
+        if(!Validation::checkUser('users',$this->nom,$this->email))
+        {
+            $result=false;
+        }
+        else
+        {
+            $result=true;
+        }
+        return $result;
+    }
 
     
 
