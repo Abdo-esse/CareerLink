@@ -17,8 +17,9 @@ class Connexion
             try{
                 self::$conn= new PDO("mysql:host=".self::$host.";dbname=".self::$db,
                 self::$username,
-                self::$password
+                self::$password,
             );
+            echo 'fgghhjh';
             
             }catch(PDOExeption $exeption)
             {

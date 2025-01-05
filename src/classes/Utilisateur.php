@@ -25,10 +25,10 @@ class Utilisateur
         $this->role=$role;
         $this->data = [
             "id" => $this->id,
-            "name" => $this->nom,
-            "email" => $this->email,
-            "password" => $this->password,
-            "role"=>$this->role->getRole()->getid()
+            "name" => "$this->nom",
+            "email" => "$this->email",
+            "password" => "$this->password"
+            // "role"=>$this->role->getRole()->getid()
         ];
     }
 
@@ -48,9 +48,9 @@ class Utilisateur
 
 }
 
-$role=new Role(1,'admin');
-$utilisateur=new Utilisateur( "nom" , "email", "password" ,$role,"idnull");
-print_r($utilisateur);
-echo "<br>";
-// print_r ($utilisateur->getRole()->getTitle());
-echo ($utilisateur->getRole()->getTitle());
+// $role=new Role(1,'admin');
+// $utilisateur=new Utilisateur( "nom" , "email", "password" ,$role,"idnull");
+// print_r($utilisateur);
+// echo "<br>";
+// // print_r ($utilisateur->getRole()->getTitle());
+// echo ($utilisateur->getRole()->getTitle());
