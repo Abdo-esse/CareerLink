@@ -10,8 +10,8 @@
 </head>
 <body>
     <form action="../../Controllers/auth/login.php" method="post">
-        <label for="email">E-mail or Name</label> <br>
-        <input type="text"  name="emailOrName" id="email" required placeholder="exemple@gmail.com"><br>
+        <label for="email">E-mail</label> <br>
+        <input type="email"  name="email" id="email" required placeholder="exemple@gmail.com"><br>
         <label for="password">password</label><br>
         <input type="password"  name="password"id="password" required ><br>
        

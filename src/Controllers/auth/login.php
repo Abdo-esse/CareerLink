@@ -1,10 +1,28 @@
-<?php 
+<?php
+// echo 'php l3abit';
+// require_once __DIR__ . '/../../../vendor/autoload.php'; 
 
-if(isset($_POST["login"]))
-{
+// use App\Controllers\auth\LoginContr;
 
-    $name=$_POST["emailOrName"];
-    $password=$_POST["password"];
-   echo "$name, $password";
+
+// if (isset($_POST["login"])) {
+//     $email = $_POST["email"];
+//     $password = $_POST["password"];
     
+//     $user = new LoginContr();
+//     $user->loginUser($email, $password);
+// }
+require_once __DIR__ . '/../../../vendor/autoload.php'; 
+
+use App\Controllers\auth\LoginContr;
+
+if (isset($_POST['login'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $loginController = new LoginContr();
+    $loginController->loginUser($email, $password);
 }
+
+
+?>
