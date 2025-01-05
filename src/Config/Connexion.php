@@ -8,7 +8,7 @@ class Connexion
     private static $db='CareerLink';
     private static $username='root';
     private static $password='';
-     static $conn;
+     public static $conn=null;
 
     static function connexion()
     {
@@ -19,6 +19,7 @@ class Connexion
                 self::$username,
                 self::$password,
             );
+            self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             echo 'fgghhjh';
             
             }catch(PDOExeption $exeption)

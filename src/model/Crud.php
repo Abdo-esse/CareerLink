@@ -1,5 +1,7 @@
 <?php 
 namespace App\model;
+// echo "fdfdfdfdf";
+
 require __DIR__ . '/../../vendor/autoload.php';
 use App\Config\Connexion;
 // Connexion::connexion();
@@ -12,15 +14,16 @@ class Crud
 {
 
       static function createAction ($table,$data){
+        $conn=Connexion :: connexion();
         $columns= implode(',',array_keys($data));
         $values= implode(',',array_fill(0,count($data),'?'));
         $sql="INSERT INTO $table ($columns) values ($values)";
 // Connexion::connexion();
 
 
-        $stmt = Connexion :: connexion()->prepare($sql);
+        $stmt = $conn ->prepare($sql);
         $stmt-> execute(array_values($data));
-        return Connexion ::connexion()->lastInsertId();
+        return  $conn->lastInsertId();
       }
 
       static function readAction($table,$id){
