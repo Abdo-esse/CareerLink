@@ -13,7 +13,12 @@ class Crud
 {
 
       static function createAction ($table,$data){
-        $conn = Connexion::connexion(); 
+        $conn = Connexion::connexion();
+        if ($conn !== null) {
+          echo "Connexion réussie à la base de données.";
+      } else {
+          echo "Échec de la connexion.";
+      } 
         $columns = implode(',', array_keys($data));
         $values = implode(',', array_fill(0, count($data), '?'));
         $sql = "INSERT INTO $table ($columns) VALUES ($values)";
@@ -44,7 +49,7 @@ class Crud
         $stmt = Connexion :: $conn->prepare($sql);
         $stmt->execute([$id]);
       }
-      
+
 
       
 

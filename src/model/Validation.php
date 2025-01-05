@@ -1,4 +1,9 @@
 <?php 
+namespace App\model;
+require __DIR__ . '/../../vendor/autoload.php';
+
+
+use App\Config\Connexion;
 
 
 
@@ -47,15 +52,15 @@ class Validation
         return $result;
     }
 
-    static function checkUser($table,$name,$email)
+    static function checkUser($name,$email)
     {
         
-        $stmt=$this->connect()->prepare("SELECT * FROM  $table WHERE user_uid=? OR user_email=?;");
+        $stmt=Connexion::connexion()->prepare("SELECT `name` FROM  users WHERE `name`=? OR email=?;");
      
         if(!$stmt->execute(array($name,$email)))
         {
             $stmt=null;
-            header("location: ../public/index.php?error=stmtfailed");
+            header("location: ../Views/auth/candidatPage.php?stament_makhdamatch");
             exit();
         }
         $resultCheck;
