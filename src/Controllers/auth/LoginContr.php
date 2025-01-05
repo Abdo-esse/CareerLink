@@ -1,5 +1,4 @@
 <?php
-// 
 
 
 namespace App\Controllers\auth;
@@ -32,7 +31,7 @@ class LoginContr extends LoginModel
                 header("Location:../../Views/index.php?recruiter");
                 break;
             default:
-                header("Location:../../Views/auth/login.php?error=unknow".$user->getRole()->getTitle()."nrole");
+                header("Location:../../Views/auth/login.php?error=unknownrole");
         }
         exit();
     }

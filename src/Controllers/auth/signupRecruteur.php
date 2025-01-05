@@ -56,7 +56,7 @@ if(isset($_POST["SignUP"]))
         exit();
     }
     $hashedPwd= password_hash($password,PASSWORD_DEFAULT);
-    $recruteur= new Recruteur($name, $email, $password,$role,$nomEntreprise ,$emailProfessionnel);
+    $recruteur= new Recruteur($name, $email, $hashedPwd,$role,$nomEntreprise ,$emailProfessionnel);
     $recruteur->inscription();
     header("Location: ../../Views/index.php?iyh_3lamolana_rak_wlit_recruteur");
     exit(); 
