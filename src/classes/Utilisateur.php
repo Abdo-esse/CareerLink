@@ -40,45 +40,8 @@ class Utilisateur
     public function getPassword() { return $this->password; }
 
     public function inscription (){
-//         // Crud::createAction(self::table, $this->data);
-//         // header("location :../../Controllers/auth/signupCandidat.php?iyh_3lamolana");
-//         $conn=Connexion :: connexion();
-//         $columns= implode(',',array_keys( $this->data));
-//         $values= implode(',',array_fill(0,count($this->data),'?'));
-//         $sql="INSERT INTO 'users' ($columns) values ($values)";
-// // Connexion::connexion();
-
-
-//         $stmt = $conn ->prepare($sql);
-//         $stmt-> execute(array_values($this->data));
-//         return  $conn->lastInsertId();
-// Connexion à la base de données
-$conn = Connexion::connexion(); // Retourne la connexion PDO
-
-// Préparation des colonnes et valeurs
-$columns = implode(',', array_keys($this->data));
-$values = implode(',', array_fill(0, count($this->data), '?'));
-
-// Requête SQL corrigée (suppression des guillemets simples)
-$sql = "INSERT INTO users ($columns) VALUES ($values)";
-
-try {
-    // Préparation de la requête
-    $stmt = $conn->prepare($sql);
-
-    // Exécution de la requête avec les valeurs
-    $stmt->execute(array_values($this->data));
-
-    // Retourner l'ID du dernier enregistrement inséré
-    echo 'mzyan';
-    return $conn->lastInsertId();
-    
-} catch (PDOException $e) {
-    // Gestion des erreurs
-    die("Erreur lors de l'insertion : " . $e->getMessage());
-}
-
-    }
+        Crud::createAction('users', $this->data);
+ }
 
     
 

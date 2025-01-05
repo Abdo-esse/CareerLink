@@ -10,9 +10,9 @@ require __DIR__ . '/../../vendor/autoload.php';
 use App\Config\Connexion;
 
 
-if (Connexion::connexion()!==null){
-    echo 'nadi';
-}
+// if (Connexion::connexion()!==null){
+//     echo 'nadi';
+// }
 ?>
 
 <!DOCTYPE html>

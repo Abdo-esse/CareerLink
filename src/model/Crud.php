@@ -1,29 +1,35 @@
 <?php 
 namespace App\model;
-// echo "fdfdfdfdf";
+
 
 require __DIR__ . '/../../vendor/autoload.php';
 use App\Config\Connexion;
-// Connexion::connexion();
-// if (Connexion::$connexion()!==null){
-//     echo 'nadi';
-// }
-// namespace 
+
+
 
 class Crud 
 {
 
       static function createAction ($table,$data){
-        $conn=Connexion :: connexion();
-        $columns= implode(',',array_keys($data));
-        $values= implode(',',array_fill(0,count($data),'?'));
-        $sql="INSERT INTO $table ($columns) values ($values)";
-// Connexion::connexion();
+        $conn = Connexion::connexion(); 
 
 
-        $stmt = $conn ->prepare($sql);
-        $stmt-> execute(array_values($data));
-        return  $conn->lastInsertId();
+$columns = implode(',', array_keys($data));
+$values = implode(',', array_fill(0, count($data), '?'));
+
+
+$sql = "INSERT INTO $table ($columns) VALUES ($values)";
+
+
+    
+    $stmt = $conn->prepare($sql);
+
+    
+    $stmt->execute(array_values($data));
+
+ 
+    echo 'mzyan';
+    return $conn->lastInsertId();
       }
 
       static function readAction($table,$id){
