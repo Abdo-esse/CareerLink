@@ -23,6 +23,19 @@ class Validation
         }
         return $result;
     }
+    static function validationNomEntreprise($nomEntreprise)
+    {
+        $result;
+        if(!preg_match("/^[a-zA-Z' -]{3,50}$/", $nomEntreprise))
+        {
+            $result=false;
+        }
+        else
+        {
+            $result=true;
+        }
+        return $result;
+    }
 
     static function validationEmail($email)
     {

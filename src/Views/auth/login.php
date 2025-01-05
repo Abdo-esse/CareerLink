@@ -9,11 +9,11 @@
     <title>login</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="../../Controllers/auth/login.php" method="post">
         <label for="email">E-mail</label> <br>
-        <input type="email" id="email" required placeholder="exemple@gmail.com"><br>
+        <input type="email"  name="email" id="email" required placeholder="exemple@gmail.com"><br>
         <label for="password">password</label><br>
-        <input type="password" id="password" required ><br>
+        <input type="password"  name="password"id="password" required ><br>
        
         <input type="submit" name="login">
     </form>
