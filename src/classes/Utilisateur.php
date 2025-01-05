@@ -8,13 +8,12 @@ use App\Config\Connexion;
 
 class Utilisateur
 {
-    private $id;
-    private $nom ;
-    private $email;
-    private $password ;
-    private Role $role;
-    private const table="users";
-    private $data;
+    protected $id;
+    protected $nom ;
+    protected $email;
+    protected $password ;
+    protected Role $role;
+    protected $data;
    
     
 
@@ -38,23 +37,12 @@ class Utilisateur
     public function getRole() { return $this->role; }
     public function getEmail() { return $this->email; }
     public function getPassword() { return $this->password; }
+    public function getData() { return  $this->data; }
 
     public function inscription (){
         Crud::createAction('users', $this->data);
  }
- private function chekuserExiste()
-    {
-        $result;
-        if(!Validation::checkUser('users',$this->nom,$this->email))
-        {
-            $result=false;
-        }
-        else
-        {
-            $result=true;
-        }
-        return $result;
-    }
+
 
     
 
