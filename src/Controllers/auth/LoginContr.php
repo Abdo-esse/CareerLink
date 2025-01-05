@@ -22,13 +22,13 @@ class LoginContr extends LoginModel
         // Vérification du rôle
         switch ($user->getRole()->getTitle()) {
             case "Admin":
-                header("Location:../../Views/index.php?natadmin");
+                header("Location:../../Views/admin/dashbord.php?natadmin");
                 break;
             case "Candidat":
-                header("Location:../../Views/index.php?ntacandidate");
+                header("Location:../../Views/candidat/index.php?ntacandidate");
                 break;
             case "Recruteur":
-                header("Location:../../Views/index.php?recruiter");
+                header("Location:../../Views/recruteur/index.php?recruiter");
                 break;
             default:
                 header("Location:../../Views/auth/login.php?error=unknownrole");
