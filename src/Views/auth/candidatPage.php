@@ -9,13 +9,13 @@
     <h1>Candidat</h1>
     <form action="../../Controllers/auth/signupCandidat.php" method="post">
         <label for="fullName">Full name</label>
-        <input type="text" required placeholder="Full name" id="fullName"><br>
+        <input type="text" name="name" required placeholder="Full name" id="fullName"><br>
         <label for="email">Email</label>
-        <input type="email" required placeholder="votre e-mail" id="email"><br>
+        <input type="email" name="email" required placeholder="votre e-mail" id="email"><br>
         <label for="password">Password</label>
-        <input type="password" required id="password"><br>
+        <input type="password" name="password" required id="password"><br>
         <label for="password2">Repeat Password</label>
-        <input type="password" required  id="password2"><br>
+        <input type="password" name="passwordRepate" required  id="password2"><br>
         <input type="submit" name="SignUP" >
     
     </form>

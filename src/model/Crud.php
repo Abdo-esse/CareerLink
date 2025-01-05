@@ -12,7 +12,7 @@ class Crud
         $sql="INSERT INTO $table ($columns) values ($values)";
         $stmt = Connexion :: $conn->prepare($sql);
         $stmt-> execute(array_values($data));
-        return Connexion :: $conn->lastInsertId();
+        return true;
       }
 
       static function readAction($table,$id){

@@ -3,6 +3,9 @@
 
 
 require __DIR__ . '/../../../vendor/autoload.php'; 
+use App\Classes\Role; 
+use App\Classes\Utilisateur; 
+
 // include __DIR__ . '/pages/navbar.php';
 
 // use App\Classes\App; 
@@ -23,7 +26,7 @@ if(isset($_POST["SignUP"]))
     $passwordRepate=$_POST["passwordRepate"];
     $role= new Role(3,"Candidat");
     $candidat = new Candidat($name,$email,$password,$role);
-    $condidat->signup();
+    $condidat->siinscription();
     
 
 }
