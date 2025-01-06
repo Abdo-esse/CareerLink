@@ -43,13 +43,13 @@ if(isset($_GET['id']))
 {?>
 <div class="min-h-screen bg-purple-400 flex justify-center items-center">
 
-  <form action="../../Controllers/admin/updateCategorie.php" method="post" class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+  <form action="../../Controllers/admin/updateCategorie.php?" method="post" class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
     <div>
       <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Update Categorie</h1>
       <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Ajoutez une nouvelle catégorie ici.</p>
     </div>
     <div class="space-y-4">
-      <input type="hidden" name="id"  />
+      <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>" />
       <input type="text" name="name" placeholder="Ajouter une categorie" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
     </div>
     <div class="text-center mt-6">

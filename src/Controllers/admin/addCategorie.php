@@ -18,10 +18,5 @@ if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
 
   header("Location:../../Views/admin/categories.php");
   exit();
-//    foreach ($_SESSION["categories"] as $categorieItem) {
-    
-//     echo "Nom de la catégorie : " . $categorieItem->name . "<br>";
-//     echo "ID du rôle : " . $categorieItem->id . "<br>";
-// }
 
 }
