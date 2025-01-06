@@ -14,12 +14,10 @@
 if(isset($_SESSION["userid"]))
             {
             ?>
-            <a href="#" class="btn login-btn"> <?php echo $_SESSION["useruid"];?></a>
-            <a href="./auth/logout.php" class="btn signup-btn">logout</a>
-            <?php }
-            else{ ?>
-            <a href="./auth/login.php" class="btn login-btn">Log In</a>
-            <a href="./pages/signupPage.php" class="btn signup-btn">Sign Up</a>
-            <?php } ?>
+            <h1>Welcom <?php echo    $_SESSION["userName"];?> </h1>
+            <a href="addCategorie.php" class="btn login-btn"> <h4>Add categories</h4> </a>
+           
+            <?php }?>
+           
 </body>
 </html>

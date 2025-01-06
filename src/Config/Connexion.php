@@ -12,15 +12,14 @@ class Connexion
 
     static function connexion()
     {
-        // if(self::$conn===null)
-        // {
+        if(self::$conn===null)
+        {
             try{
                 self::$conn= new PDO("mysql:host=".self::$host.";dbname=".self::$db,
                 self::$username,
                 self::$password,
             );
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo 'fgghhjh';
             
             }catch(PDOExeption $exeption)
             {
@@ -28,7 +27,7 @@ class Connexion
             }
             return self::$conn;
 
-        // }
+        }
 
     }
 
