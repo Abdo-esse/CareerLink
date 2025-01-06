@@ -50,9 +50,15 @@ class Crud
       }
 
       static function updateAction($table,$id,$data){
+        $conn = Connexion::connexion();
+        if ($conn !== null) {
+          echo "Connexion réussie à la base de données.";
+      } else {
+          echo "Échec de la connexion.";
+      } 
         $columns=implode(' = ?, ',array_keys($data)) . ' = ?';
         $sql="UPDATE $table SET  $columns  WHERE id = ?";
-        $stmt= Connexion :: $conn->prepare($sql);
+        $stmt= $conn->prepare($sql);
         $stmt->execute(array_merge(array_values($data), [$id]));
       }
 
