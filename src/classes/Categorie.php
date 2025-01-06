@@ -23,12 +23,11 @@ class Categorie
 
      public function addCategorie()
      {
-        Crud::createAction('categories',[
-            "name"=>"$this->name",
-            "id_admin"=>"$this->idAdmin"
-        ]);
-
-    
+        Crud::createAction('categories',$this->data);
+     }
+     public function readCategorie()
+     {
+        return Crud::readAll('categories');
      }
     
 }

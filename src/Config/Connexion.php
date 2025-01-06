@@ -12,8 +12,8 @@ class Connexion
 
     static function connexion()
     {
-        if(self::$conn===null)
-        {
+        // if(self::$conn===null)
+        // {
             try{
                 self::$conn= new PDO("mysql:host=".self::$host.";dbname=".self::$db,
                 self::$username,
@@ -27,7 +27,7 @@ class Connexion
             }
             return self::$conn;
 
-        }
+        // }
 
     }
 
