@@ -30,17 +30,9 @@
             </li>
         </ul>
         <div class="nav-buttons">
-        <?php
-if(isset($_SESSION["userid"]))
-            {
-            ?>
-            <a href="#" class="btn login-btn"> <?php echo $_SESSION["useruid"];?></a>
-            <a href="./auth/logout.php" class="btn signup-btn">logout</a>
-            <?php }
-            else{ ?>
+  
             <a href="./auth/login.php" class="btn login-btn">Log In</a>
             <a href="./pages/signupPage.php" class="btn signup-btn">Sign Up</a>
-            <?php } ?>
         </div>
     </nav>
 </body>

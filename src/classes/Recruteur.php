@@ -15,13 +15,13 @@ class Recruteur extends Utilisateur
     public function __construct($nom, $email, $password, Role $role, $nomEntreprise, $emailProfessionnel, $id = null)
     {
         parent::__construct($nom, $email, $password, $role, $id);
-        $this->idRecruteur = $idRecruteur;
+
         $this->nomEntreprise = $nomEntreprise;
         $this->emailProfessionnel = $emailProfessionnel;
         $this->dataRecruteur = [
             
-            "nomEntreprise" => " $this->nomEntreprise",
-            "emailProfessionnel" => " $this->emailProfessionnel"
+            "name_entreprise" => " $this->nomEntreprise",
+            "email_professionnel" => " $this->emailProfessionnel"
         ];
         
     }
