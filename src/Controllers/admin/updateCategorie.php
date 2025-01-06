@@ -18,7 +18,7 @@ if( isset($_POST["submit"]))
   $updateCategorie->setId($id);
   $updateCategorie->updateCategorie();
   $_SESSION["categories"]=$updateCategorie->readCategorie();
-  header("Location:../../Views/admin/categories.php");
+  header("Location:../../Views/admin/gestionCategories/categories.php");
   exit();
 
 }

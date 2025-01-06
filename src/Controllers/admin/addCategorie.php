@@ -16,7 +16,7 @@ if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
   $categorie->addCategorie() ;
   $_SESSION["categories"]=$categorie->readCategorie() ;
 
-  header("Location:../../Views/admin/categories.php");
+  header("Location:../../Views/admin/gestionCategories/categories.php");
   exit();
 
 }

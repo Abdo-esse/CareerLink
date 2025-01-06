@@ -11,6 +11,6 @@ if(isset($_GET['id']))
    $deleteCategorie->setDateDalet(date("Y-m-d"));
    $deleteCategorie->daletCategorie();
    $_SESSION["categories"]=$deleteCategorie->readCategorie();
-   header("Location:../../Views/admin/categories.php");
+   header("Location:../../Views/admin/gestionCategories/categories.php");
    exit();
 }

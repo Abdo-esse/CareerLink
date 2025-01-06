@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../../styles/style.css">
      <!-- tailwind -->
     <!-- carousel -->
     <link
@@ -46,7 +46,7 @@
 </head>
 <body>
     <div class="page">
-        <div class="sidebar" ><?php include_once("Sidebar.php");?></div>
+        <div class="sidebar" ><?php include_once("../Sidebar.php");?></div>
            
     
 <div class="content">
@@ -122,7 +122,7 @@
                
                 <td class="px-6 py-4 flex gap-x-0.5">
                    
-                    <a href="../../Controllers/admin/daletCategorie.php?id=<?php echo  $categorieItem->id ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <a href="../../../Controllers/admin/daletCategorie.php?id=<?php echo  $categorieItem->id ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
 </svg>
 
