@@ -23,6 +23,7 @@ class Categorie
      }
 
      public function setId($id){ $this->id=$id;}
+     public function setName($name){ $this->name=$name;}
      public function setDateDalet($dateDelete){ $this->dateDelete=$dateDelete;}
 
      public function addCategorie()
@@ -36,6 +37,10 @@ class Categorie
      public function daletCategorie()
      {
         Crud::updateAction('categories', $this->id,["date_delete"=>$this->dateDelete]);
+     }
+     public function updateCategorie()
+     {
+        Crud::updateAction('categories', $this->id,["name"=>"$this->name"]);
      }
     
 }

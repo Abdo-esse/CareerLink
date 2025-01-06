@@ -3,7 +3,7 @@ require_once __DIR__ . '/../../../vendor/autoload.php';
 use App\classes\Categorie;
 session_start();
 
-echo 'welco';
+
 if(isset($_GET['id']))
 {
    $deleteCategorie= new Categorie();
