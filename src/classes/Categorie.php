@@ -41,7 +41,6 @@ class Categorie
      public function updateCategorie()
      {
         Crud::updateAction('categories', $this->id,["name"=>"$this->name"]);
-        // echo $this->name,$this->id;
      }
     
 }
