@@ -50,7 +50,7 @@ class LoginModel
        
         session_start();
         $_SESSION["userid"] = $user["id"];
-        $_SESSION["useruid"] = $user["name"];
+        $_SESSION["userName"] = $user["name"];
         $_SESSION["userrole"] = $user["role"];
 
         

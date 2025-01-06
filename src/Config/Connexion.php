@@ -20,7 +20,6 @@ class Connexion
                 self::$password,
             );
             self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo 'fgghhjh';
             
             }catch(PDOExeption $exeption)
             {

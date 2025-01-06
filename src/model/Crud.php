@@ -4,7 +4,7 @@ namespace App\model;
 
 require __DIR__ . '/../../vendor/autoload.php';
 use App\Config\Connexion;
-
+use PDO;
 
 
 class Crud 
@@ -27,6 +27,19 @@ class Crud
          return $conn->lastInsertId();
       }
 
+      static function readAll($table){
+        $conn = Connexion::connexion();
+        if ($conn !== null) {
+          echo "Connexion réussie à la base de données.";
+      } else {
+          echo "Échec de la connexion.";
+      } 
+        $sql="SELECT * FROM $table";
+        $stmt=$conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+      }
       static function readAction($table,$id){
 
         $sql="SELECT * FROM $table WHERE id= ?";
@@ -37,9 +50,15 @@ class Crud
       }
 
       static function updateAction($table,$id,$data){
+        $conn = Connexion::connexion();
+        if ($conn !== null) {
+          echo "Connexion réussie à la base de données.";
+      } else {
+          echo "Échec de la connexion.";
+      } 
         $columns=implode(' = ?, ',array_keys($data)) . ' = ?';
         $sql="UPDATE $table SET  $columns  WHERE id = ?";
-        $stmt= Connexion :: $conn->prepare($sql);
+        $stmt= $conn->prepare($sql);
         $stmt->execute(array_merge(array_values($data), [$id]));
       }
 
