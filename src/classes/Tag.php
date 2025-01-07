@@ -40,7 +40,8 @@ class Tag
      }
      public function updatetag()
      {
-        Crud::updateAction('categories', $this->id,["name"=>"$this->name"]);
+        Crud::updateAction('tags', $this->id,["name"=>"$this->name"]);
+        
      }
     
 }

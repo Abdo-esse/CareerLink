@@ -19,8 +19,8 @@ if( isset($_POST["submit"]))
   $updatetag->setName($name);
   $updatetag->setId($id);
   $updatetag->updatetag();
-  $_SESSION["tags"]=$updatetag->readtag();
-  header("Location:../../Views/admin/gestiontags/tags.php");
-  exit();
+//   $_SESSION["tags"]=$updatetag->readtag();
+//   header("Location:../../../Views/admin/gestiontags/tags.php");
+//   exit();
 
 }
