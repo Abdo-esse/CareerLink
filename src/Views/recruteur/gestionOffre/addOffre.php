@@ -51,7 +51,7 @@ use App\classes\Categorie;
     </style>
 </head>
 <body>
-<form  class="card max-w-sm mx-auto p-2">
+<form action="../../../Controllers/recruteur/addOffre.php" method="post"  class="card max-w-sm mx-auto p-2">
             <div class="mb-2">
               <label
                 for="name"
@@ -61,7 +61,7 @@ use App\classes\Categorie;
               <input
                 type="name"
                 id="name"
-                name="name"
+                name="post"
                 class="inputsText fullName bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray"
                 placeholder="Full-Name"
                 required
@@ -155,6 +155,7 @@ use App\classes\Categorie;
 
             <button
               type="submit"
+              name="submit"
               class="sendData text-gray bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
               submit
