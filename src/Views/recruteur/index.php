@@ -87,23 +87,34 @@ if(isset($_SESSION["userid"]))
 <section
             class="grid grid-cols-1 ml-1.5 mt-1.5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6"
           >
+          <?php
+          foreach ($_SESSION["offre"] as $offre) {
+                if ($offre->date_delete == null) {
+                    ?>
            
-
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <!-- bg-white rounded-2xl p-5 cursor-pointer relative hover:shadow -->
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg  relative hover:shadow dark:bg-gray-800 dark:border-gray-700">
     <div class="p-5">
       
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Post </h5>
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Name enterprise </h5>
-            <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white">Categories </h6>
-            <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white">tag / tag / tag </h6>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-            <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white">Lieu du travaile | 12340DH </h6>
-            <div class ="flex justify-end" ><a href="" class="text-blue-600">Modifier </a> | <a href="" class="text-rose-700"> Supremer</a></div>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->poste ?> </h5>
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->name_entreprise ?> </h5>
+            <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->categorie ?> </h6>
+            <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->tags ?></h6>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><?php echo $offre->qualifications_requises ?></p>
+            <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->lieu_travail ?> | <?php echo $offre->salaire ?> </h6>
+            <div class ="flex justify-between">
+                <div class =" "> <?php echo $offre->date_create ?></div>
+            <div class ="" ><a href="" class="text-blue-600">Modifier </a> | <a href="" class="text-rose-700"> Supremer</a></div>
+
+            </div>
        
             
     </div>
 </div>
-
+<?php
+                }
+             } 
+            ?>
             
           </section>
     
