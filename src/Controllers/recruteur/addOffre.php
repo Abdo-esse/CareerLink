@@ -22,9 +22,10 @@ if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
   $idRecruteur=$_SESSION["userid"];
   $offre= new offre($post,$salairePropose,$qualification,$lieuTravail,$idRecruteur,$idCategorie,$creatAt,$idTags);
   $offre->addOffre();
-  $_SESSION["categories"]=$offre->readCategorie() ;
+  $_SESSION["categories"]=$offre->readOffre();
+//   print_r($_SESSION["categories"]);
 
-  header("Location:../../Views/admin/gestionCategories/categories.php");
+  header("Location:../../Views/recruteur/index.php");
   exit();
 
 

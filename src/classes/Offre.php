@@ -56,7 +56,7 @@ class Offre
      }
      public function readOffre()
      {
-        return Crud::readAll('offres_emploi');
+        return Crud::readAllOffre();
      }
      public function daletOffre()
      {

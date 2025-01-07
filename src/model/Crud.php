@@ -30,6 +30,20 @@ class Crud
 
         return $stmt->fetchAll(PDO::FETCH_OBJ);
       }
+      static function readAllOffre(){
+        $conn = Connexion::connexion(); 
+        $sql="SELECT offres_emploi.poste,offres_emploi.salaire,offres_emploi.qualifications_requises,offres_emploi.lieu_travail,offres_emploi.date_create,info_recruteurs.name_entreprise,categories.name as categorie ,GROUP_CONCAT(tags.name) as tags
+              FROM offres_emploi
+              JOIN offre_emploi_tags on offre_emploi_tags.id_offre_emploi=offres_emploi.id
+              JOIN tags ON tags.id=offre_emploi_tags.id_tag
+              JOIN categories on categories.id=offres_emploi.id_categorie
+              JOIN info_recruteurs on info_recruteurs.id_recruteur=offres_emploi.id_recruteur
+              GROUP BY offres_emploi.id;";
+        $stmt=$conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_OBJ);
+      }
       static function readAction($table,$id){
         $conn = Connexion::connexion();
         $sql="SELECT * FROM $table WHERE id= ?";
