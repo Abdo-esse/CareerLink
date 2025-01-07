@@ -43,7 +43,7 @@
 
   <form action="../../Controllers/auth/signupCandidat.php" method="post" class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
     <div>
-      <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Log in</h1>
+      <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Sign up</h1>
       <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Sign up now to enjoy all services without ads, completely free!</p>
     </div>
     <div class="space-y-4">
