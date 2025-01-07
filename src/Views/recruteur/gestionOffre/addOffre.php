@@ -5,6 +5,9 @@ use App\classes\Categorie;
  session_start();
  $Categories= new Categorie();
    $_SESSION["categories"]=$Categories->readCategorie();
+   use App\classes\Tag;
+ $tags= new Tag();
+ $_SESSION["tags"]=$tags->readtag();
 
 ?>
 
@@ -58,6 +61,7 @@ use App\classes\Categorie;
               <input
                 type="name"
                 id="name"
+                name="name"
                 class="inputsText fullName bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray"
                 placeholder="Full-Name"
                 required
@@ -72,6 +76,7 @@ use App\classes\Categorie;
               <input
                 type="text"
                 id="photoJeuor"
+                name="salaire"
                 class="inputsLien photoInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray"
                 placeholder="Entrer lien de limage"
                 required
@@ -84,7 +89,7 @@ use App\classes\Categorie;
                 >Qualifications requises</label
               >
               <textarea
-               name="qualification" 
+               name="qualifications" 
                id=""
                class="inputsLien photoInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray"
                placeholder="Entrer lien de limage"
@@ -99,12 +104,16 @@ use App\classes\Categorie;
                 >
                 <select
                   id="countries"
+                  name="categorie"
                   class="selectInput positionInputs bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray"
                 >
                   <option onch value="">Choisai une  Catégorie</option>
-                  <option value="LW">LW</option>
-                  <option value="ST">ST</option>
-                 </select>
+                  <?php foreach ($_SESSION["categories"] as $categorieItem) {
+                if ($categorieItem->date_delete == null) {?>
+                         <option value="<?php echo  $categorieItem->id ?>"><?php echo  $categorieItem->name ?></option>
+                  <?php } 
+            }?>
+              </select>
               </div>
 
               <div class="mb-2">
@@ -113,18 +122,14 @@ use App\classes\Categorie;
                     class="block mb-2 text-sm font-medium text-gray dark:text-gray"
                     >Lieu de travail.</label
                   >
-                  <select
-                    name="nationality"
+                  <input
+                type="text"
+                name="lieu"
                     class="bg-gray-50 border border-gray-300 text-gray text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  >
-                    <option value="">select nationality</option>
-                    <option value="afghan">Afghan</option>
-                    <option value="albanian">Albanian</option>
-                    <option value="algerian">Algerian</option>
-                    <option value="american">American</option>
-                    <option value="andorran">Andorran</option>
-                    <option value="angolan">Angolan</option>
-                  </select>
+                  placeholder="Entrer lien de limage"
+                required
+              />
+                 
                 </div>
             </div>
             <div class="mb-2">
@@ -135,19 +140,21 @@ use App\classes\Categorie;
                     multiple 
                     class="bg-gray-50 border border-gray-300 outline-none text-gray text-sm rounded-lg focus:ring-0 focus:border-transparent block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray"
                 >
-                    
-                        <option value="" >gfggfgfgfg</option>
-                        <option value="" >gfggfgfgfg</option>
-                        <option value="" >gfggfgfgfg</option>
-                        <option value="" >gfggfgfgfg</option>
-                        <option value="" >gfggfgfgfg</option>
-                        <option value="" >gfggfgfgfg</option>
+                <?php
+             foreach ($_SESSION["tags"] as $tagItem) {
+                if ($tagItem->date_delete == null) {
+                    ?>
+                    <option value=" <?php echo  $tagItem->id ?>" ><?php echo  $tagItem->name ?></option>
+                <?php
+                }
+             } 
+            ?>
                    
                 </select>
             </div>
 
             <button
-              type="button"
+              type="submit"
               class="sendData text-gray bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
               submit
