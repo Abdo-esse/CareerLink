@@ -81,6 +81,7 @@
     <div class="space-y-4">
       <input type="text" name="name" required placeholder="Full name" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
       <input type="text" name="nomEntreprise" required placeholder="Full name" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
+      <input type="file" name="logoEntreprise" required class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
       <input type="email" name="email" required placeholder="votre e-mail" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
       <input type="email" name="emailProfessionnel" required placeholder="votre e-mail" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
       <input type="password" name="password"  required  class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
