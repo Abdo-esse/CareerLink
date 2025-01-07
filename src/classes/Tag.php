@@ -26,13 +26,13 @@ class Tag
      public function setName($name){ $this->name=$name;}
      public function setDateDalet($dateDelete){ $this->dateDelete=$dateDelete;}
 
-     public function addCategorie()
+     public function addtag()
      {
-        Crud::createAction('categories',$this->data);
+        Crud::createAction('tags',$this->data);
      }
-     public function readCategorie()
+     public function readtag()
      {
-        return Crud::readAll('categories');
+        return Crud::readAll('tags');
      }
      public function daletCategorie()
      {
