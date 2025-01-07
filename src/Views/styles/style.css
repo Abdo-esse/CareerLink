@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page{
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+}
+.content{
+    grid-column: 2 / 3;
+}
+.sidebar{
+    grid-column: 1 / 2;
+}
