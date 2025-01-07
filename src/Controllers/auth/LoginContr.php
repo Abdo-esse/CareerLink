@@ -27,7 +27,7 @@ class LoginContr extends LoginModel
             case "Candidat":
                 header("Location:../../Views/candidat/index.php?ntacandidate");
                 break;
-            case "Recruteur":
+            case "Rectruteur":
                 header("Location:../../Views/recruteur/index.php?recruiter");
                 break;
             default:
