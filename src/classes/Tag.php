@@ -34,9 +34,9 @@ class Tag
      {
         return Crud::readAll('tags');
      }
-     public function daletCategorie()
+     public function daletTag()
      {
-        Crud::updateAction('categories', $this->id,["date_delete"=>$this->dateDelete]);
+        Crud::updateAction('tags', $this->id,["date_delete"=>$this->dateDelete]);
      }
      public function updatetag()
      {
