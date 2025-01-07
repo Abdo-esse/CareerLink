@@ -1,6 +1,10 @@
 <?php 
- session_start();
+require_once __DIR__ . '/../../../../vendor/autoload.php'; 
 
+use App\classes\Categorie;
+ session_start();
+ $Categories= new Categorie();
+   $_SESSION["categories"]=$Categories->readCategorie();
 
 ?>
 
