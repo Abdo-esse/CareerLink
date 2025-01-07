@@ -38,7 +38,7 @@ class Tag
      {
         Crud::updateAction('categories', $this->id,["date_delete"=>$this->dateDelete]);
      }
-     public function updateCategorie()
+     public function updatetag()
      {
         Crud::updateAction('categories', $this->id,["name"=>"$this->name"]);
      }
