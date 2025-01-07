@@ -44,13 +44,13 @@
     
 <div class="min-h-screen bg-purple-400 flex justify-center items-center">
 
-  <form action="../../../Controllers/admin/tags/addTag.php" method="post" class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+  <form action="../../../Controllers/admin/addCategorie.php" method="post" class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
     <div>
       <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Add Categorie</h1>
       <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Ajoutez une nouvelle catégorie ici.</p>
     </div>
     <div class="space-y-4">
-      <input type="text" name="name" placeholder="Ajouter tag" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
+      <input type="text" name="name" placeholder="Ajouter Categorie" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
     </div>
     <div class="text-center mt-6">
       <button type="submit" name="submit" class="w-full py-2 text-xl text-white bg-purple-400 rounded-lg hover:bg-purple-500 transition-all">Add Categorie</button>
