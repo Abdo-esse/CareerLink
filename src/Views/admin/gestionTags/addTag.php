@@ -48,7 +48,7 @@
       <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Ajoutez une nouvelle tag ici.</p>
     </div>
     <div class="space-y-4">
-      <input type="text" name="name" placeholder="Ajouter une categorie" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
+      <input type="text" name="name" placeholder="Ajouter une Tag" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
     </div>
     <div class="text-center mt-6">
       <button type="submit" name="submit" class="w-full py-2 text-xl text-white bg-purple-400 rounded-lg hover:bg-purple-500 transition-all">Add Tag</button>
