@@ -10,17 +10,22 @@ use App\classes\Offre;
 
 if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
 {
-    echo '3laslama';
+   
 
   $post=$_POST["post"];
   $salairePropose=$_POST["salaire"];
   $qualification=$_POST["qualifications"];
   $idCategorie=$_POST["categorie"];
   $lieuTravail=$_POST["lieu"];
-  $tags=$_POST["tags"];
+  $idTags=$_POST["tags"];
   $creatAt=date("Y-m-d");
   $idRecruteur=$_SESSION["userid"];
-  $offre= new offre($post,$salairePropose,$qualification,$lieuTravail,$idRecruteur,$idCategorie,$creatAt);
+  $offre= new offre($post,$salairePropose,$qualification,$lieuTravail,$idRecruteur,$idCategorie,$creatAt,$idTags);
+  $offre->addOffre();
+  $_SESSION["categories"]=$offre->readCategorie() ;
+
+  header("Location:../../Views/admin/gestionCategories/categories.php");
+  exit();
 
 
 

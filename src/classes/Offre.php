@@ -39,14 +39,20 @@ class Offre
         ];
 
      }
-
+        
+     public function getId(){return  $this->id;}
+     public function getIdTags(){return  $this->idTags;}
      public function setId($id){ $this->id=$id;}
      public function setIdTags(array $idTags){ $this->idTags=$idTags;}
      public function setDateDalet($deleteAt){ $this->deleteAt=$deleteAt;}
 
      public function addOffre()
      {
-        Crud::createAction('offres_emploi',$this->data);
+        $this->id= Crud::createAction('offres_emploi',$this->data);
+        foreach($this->idTags as $idTag ){
+            Crud::createAction('offre_emploi_tags',["id_offre_emploi"=>$this->id,"id_tag"=>$idTag]);
+        }
+
      }
      public function readOffre()
      {
