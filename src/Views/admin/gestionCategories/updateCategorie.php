@@ -60,7 +60,7 @@ if(isset($_GET['id']))
       <input type="text" name="name" value="<?php echo $tag->name?>" placeholder="Ajouter une categorie" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
     </div>
     <div class="text-center mt-6">
-      <button type="submit" name="submit" class="w-full py-2 text-xl text-white bg-purple-400 rounded-lg hover:bg-purple-500 transition-all">Create Account</button>
+      <button type="submit" name="submit" class="w-full py-2 text-xl text-white bg-purple-400 rounded-lg hover:bg-purple-500 transition-all">Update Categorie</button>
     </div>
   </form>
 
