@@ -18,11 +18,13 @@ if( isset($_POST["submit"]))
     $lieuTravail=$_POST["lieu"];
     $idTags=$_POST["tags"];
     $idRecruteur=$_SESSION["userid"];
+    if(!empty( $post)&&!empty($salairePropose)&&!empty( $qualification)&&!empty($idCategorie)&&!empty($lieuTravail)&&!empty($idTags))
+    { 
     $updateOffre= new offre($post,$salairePropose,$qualification,$lieuTravail,$idRecruteur,$idCategorie,$idTags,$id);
     $updateOffre->updateOffre();
     $_SESSION["offre"]=$updateOffre->readOffre();
     // print_r($updateOffre);
-  
+    }
     header("Location:../../Views/recruteur/index.php");
     exit();
 

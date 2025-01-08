@@ -10,7 +10,7 @@ use App\classes\Offre;
 
 if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
 {
-   
+  
 
   $post=$_POST["post"];
   $salairePropose=$_POST["salaire"];
@@ -20,14 +20,13 @@ if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
   $lieuTravail=$_POST["lieu"];
   $idTags=$_POST["tags"];
   $idRecruteur=$_SESSION["userid"];
+  if(!empty( $post)&&!empty($salairePropose)&&!empty( $qualification)&&!empty($idCategorie)&&!empty($lieuTravail)&&!empty($idTags))
+  { 
   $offre= new offre($post,$salairePropose,$qualification,$lieuTravail,$idRecruteur,$idCategorie,$idTags);
   $offre->addOffre();
   $_SESSION["offre"]=$offre->readOffre();
 //   print_r($_SESSION["offre"]);
-
-  header("Location:../../Views/recruteur/index.php");
-  exit();
-
-
-
+}
+header("Location:../../Views/recruteur/index.php");
+exit();
 }
