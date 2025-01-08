@@ -1,4 +1,10 @@
-
+<?php 
+require_once __DIR__ . '/../../../vendor/autoload.php'; 
+use App\classes\Offre;
+session_start();
+$offre= new Offre();
+$_SESSION["offre"]=$offre->readOffre();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,6 +64,7 @@
 
   <div class="max-w-7xl mx-auto px-4 py-8">
     <div class="flex gap-6">
+        <!--  -->
       <!-- Left Sidebar -->
       <div class="w-64 hidden md:block">
         <div class="bg-white rounded-lg shadow-lg p-4">
@@ -107,44 +114,66 @@
           <h2 class="text-2xl font-bold mb-6">Find the Latest Jobs in Morocco</h2>
           
           <!-- Job Card 1 -->
-          <div class="border-b pb-4 mb-4">
-  <div class="flex items-start gap-4">
-    <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
-      <img src="/api/placeholder/48/48" alt="Alstom logo" class="w-10 h-10 object-contain"/>
-    </div>
-    <div class="flex-1">
-      <div class="flex justify-between items-start">
-        <div>
-          <a href="#" class="text-blue-500 font-medium hover:underline">Senior Bid Manager</a>
-          <p class="text-gray-700">Alstom</p>
-          <p class="text-gray-400">Casablanca · Morocco</p>
-          <p class="text-green-500 text-sm mt-1">16 hours ago</p>
-        </div>
-        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200">
-          Postuler
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+        
+<?php
+          foreach ($_SESSION["offre"] as $offre) {
+                if ($offre->date_delete == null) {
+                    ?>
           <!-- Job Card 2 -->
           <div class="border-b pb-4 mb-4">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
+ <div class="flex items-start gap-4">
+ <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
                 <div class="text-gray-400">
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                   </svg>
                 </div>
               </div>
-              <div class="flex-1">
-                <a href="#" class="text-blue-500 font-medium hover:underline">PP Responsible</a>
-                <p class="text-gray-700">Yazaki</p>
-                <p class="text-gray-400">Morocco</p>
-                <p class="text-green-500 text-sm mt-1">16 hours ago</p>
-              </div>
-            </div>
-          </div>
+   <div class="flex-1">
+     <div class="flex justify-between items-start">
+       <div>
+         <a href="#" class="text-blue-500 font-medium hover:underline"><?php echo $offre->poste ?></a>
+         <p class="text-gray-700"><?php echo $offre->name_entreprise ?></p>
+         <p class="text-gray-400"><?php echo $offre->lieu_travail ?> · Morocco</p>
+         
+         <!-- Catégories et tags -->
+         <div class="flex flex-wrap gap-2 mt-2">
+           <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"><?php echo $offre->categorie ?></span>
+           <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"><?php echo $offre->tags ?></span>
+           <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Full Time</span>
+         </div>
+
+         <!-- Salaire -->
+         <div class="mt-2 text-gray-700">
+           <span class="flex items-center gap-1">
+             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+             </svg>
+             <?php echo $offre->salaire ?> MAD/month
+           </span>
+         </div>
+
+         <!-- Description -->
+         <div class="mt-2 text-gray-600 text-sm">
+           <p><?php echo $offre->qualifications_requises ?></p>
+         </div>
+
+         <p class="text-green-500 text-sm mt-2">la date de création:  <?php echo $offre->date_create?> </p>
+       </div>
+       <a href="">
+       <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+         Postuler
+       </button>
+       </a>
+
+     </div>
+   </div>
+ </div>
+</div>
+<?php
+                }
+             } 
+            ?>
 
           <!-- Job Card 3 -->
           <div class="pb-4">
