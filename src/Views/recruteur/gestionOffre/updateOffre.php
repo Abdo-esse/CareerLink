@@ -59,13 +59,16 @@ if(isset($_GET['id']))
   
   // Check if the record exists
   ?>
-<form action="../../../Controllers/recruteur/addOffre.php" method="post"  class="card max-w-sm mx-auto p-2">
+<form action="../../../Controllers/recruteur/updateOffre.php" method="post"  class="card max-w-sm mx-auto p-2">
             <div class="mb-2">
+      <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>" />
+
               <label
                 for="name"
                 class="block mb-2 text-sm font-medium text-gray"
                 >Post</label
               >
+
               <input
                 type="name"
                 id="name"

@@ -13,11 +13,10 @@ class Offre
     private $idRecruteur;
     private $idCategorie;
     private array $idTags;
-    private $creatAt;
     private $deleteAt;
     private $data;
     
-     public function __construct($poste="",$salairePropose="",$qualification="",$lieuTravail="",$idRecruteur="",$idCategorie="",$creatAt="",$idTags=[],$id="")
+     public function __construct($poste="",$salairePropose="",$qualification="",$lieuTravail="",$idRecruteur="",$idCategorie="",$idTags=[],$id="")
      {
         $this->poste=$poste;
         $this->salairePropose=$salairePropose;
@@ -26,14 +25,12 @@ class Offre
         $this->idRecruteur=$idRecruteur;
         $this->idCategorie=$idCategorie;
         $this->idTags=$idTags;
-        $this->creatAt=$creatAt;
         $this->id=$id;
         $this->data=[
             "poste"=>$this->poste,
             "salaire"=> $this->salairePropose,
             "qualifications_requises"=>$this->qualification,
             "lieu_travail"=>$this->lieuTravail,
-            "date_create"=>$this->creatAt,
             "id_categorie"=>$this->idCategorie,
             "id_recruteur"=>$this->idRecruteur
         ];
@@ -65,7 +62,11 @@ class Offre
      }
      public function updateOffre()
      {
-        Crud::updateAction('offres_emploi', $this->id,["name"=>"$this->name"]);
+        Crud::updateAction('offres_emploi', $this->id,$this->data);
+        foreach($this->idTags as $idTag )
+        {
+         Crud::createAction('offre_emploi_tags',["id_offre_emploi"=>$this->id,"id_tag"=>$idTag]);
+        }
      }
     
 }
