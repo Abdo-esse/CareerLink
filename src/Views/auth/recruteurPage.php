@@ -73,7 +73,7 @@
     
 <div class="min-h-screen bg-gray-900 flex justify-center items-center">
 
-  <form action="../../Controllers/auth/signupCandidat.php" method="post" class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+  <form action="../../Controllers/auth/signupRecruteur.php" method="post" class="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
     <div>
       <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer">Sign up</h1>
       <p class="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Create an account to access all services ad-free, completely free of charge!</p>
@@ -81,6 +81,7 @@
     <div class="space-y-4">
       <input type="text" name="name" required placeholder="Full name" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
       <input type="text" name="nomEntreprise" required placeholder="Full name" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
+      <input type="file" name="logoEntreprise" required class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
       <input type="email" name="email" required placeholder="votre e-mail" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
       <input type="email" name="emailProfessionnel" required placeholder="votre e-mail" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
       <input type="password" name="password"  required  class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
