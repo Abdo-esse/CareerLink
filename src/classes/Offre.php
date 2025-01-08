@@ -49,8 +49,9 @@ class Offre
      public function addOffre()
      {
         $this->id= Crud::createAction('offres_emploi',$this->data);
-        foreach($this->idTags as $idTag ){
-            Crud::createAction('offre_emploi_tags',["id_offre_emploi"=>$this->id,"id_tag"=>$idTag]);
+        foreach($this->idTags as $idTag )
+        {
+         Crud::createAction('offre_emploi_tags',["id_offre_emploi"=>$this->id,"id_tag"=>$idTag]);
         }
 
      }
@@ -60,7 +61,7 @@ class Offre
      }
      public function daletOffre()
      {
-        Crud::updateAction('offres_emploi', $this->id,["date_delete"=>$this->dateDelete]);
+        Crud::updateAction('offres_emploi', $this->id,["date_delete"=>$this->deleteAt]);
      }
      public function updateOffre()
      {

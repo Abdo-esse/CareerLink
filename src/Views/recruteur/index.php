@@ -107,7 +107,7 @@ if(isset($_SESSION["userid"]))
             <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->lieu_travail ?> | <?php echo $offre->salaire ?> </h6>
             <div class ="flex justify-between">
                 <div class =" "> <?php echo $offre->date_create ?></div>
-            <div class ="" ><a href="" class="text-blue-600">Modifier </a> | <a href="" class="text-rose-700"> Supremer</a></div>
+            <div class ="" ><a href="" class="text-blue-600">Modifier </a> | <a href="../../Controllers/recruteur/deletOffre.php?id=<?php echo $offre->id ?>" class="text-rose-700"> Supremer</a></div>
 
             </div>
        
