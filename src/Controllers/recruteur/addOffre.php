@@ -25,8 +25,8 @@ if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
   $_SESSION["offre"]=$offre->readOffre();
 //   print_r($_SESSION["offre"]);
 
-//   header("Location:../../Views/recruteur/index.php");
-//   exit();
+  header("Location:../../Views/recruteur/index.php");
+  exit();
 
 
 

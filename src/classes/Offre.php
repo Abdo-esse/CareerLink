@@ -17,7 +17,7 @@ class Offre
     private $deleteAt;
     private $data;
     
-     public function __construct($poste="",$salairePropose="",$qualification="",$lieuTravail="",$idRecruteur="",$idCategorie="",$creatAt="",$idTags="",$id="")
+     public function __construct($poste="",$salairePropose="",$qualification="",$lieuTravail="",$idRecruteur="",$idCategorie="",$creatAt="",$idTags=[],$id="")
      {
         $this->poste=$poste;
         $this->salairePropose=$salairePropose;

@@ -1,7 +1,10 @@
 <?php 
+require_once __DIR__ . '/../../../vendor/autoload.php'; 
+
+use App\classes\Offre;
  session_start();
-
-
+ $offre= new Offre();
+   $_SESSION["offre"]=$offre->readOffre();
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +103,7 @@ if(isset($_SESSION["userid"]))
             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->name_entreprise ?> </h5>
             <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->categorie ?> </h6>
             <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->tags ?></h6>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><?php echo $offre->qualifications_requises ?></p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-1"><?php echo $offre->qualifications_requises ?></p>
             <h6 class="mb-2 font-medium font-bold tracking-tight text-gray-900 dark:text-white"><?php echo $offre->lieu_travail ?> | <?php echo $offre->salaire ?> </h6>
             <div class ="flex justify-between">
                 <div class =" "> <?php echo $offre->date_create ?></div>
