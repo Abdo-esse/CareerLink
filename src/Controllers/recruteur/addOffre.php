@@ -16,6 +16,7 @@ if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
   $salairePropose=$_POST["salaire"];
   $qualification=$_POST["qualifications"];
   $idCategorie=$_POST["categorie"];
+  print_r($idCategorie);
   $lieuTravail=$_POST["lieu"];
   $idTags=$_POST["tags"];
   $idRecruteur=$_SESSION["userid"];
