@@ -156,12 +156,12 @@ if(isset($_GET['id']))
                 <?php
              foreach ($_SESSION["tags"] as $tagItem) {
                 if ($tagItem->date_delete == null) {
-                  foreach($_SESSION["tags"] as $tagItem){
+
                     ?>
                     <option value=" <?php echo  $tagItem->id ?>" ><?php echo  $tagItem->name ?></option>
                 <?php
                 }
-            }
+            
             }
             ?>
                    
