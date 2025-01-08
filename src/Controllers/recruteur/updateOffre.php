@@ -8,7 +8,7 @@ use App\classes\Offre;
 
 
 
-if( isset($_POST["tags"]))
+if( isset($_POST["submit"]))
 {
     $id=$_POST["id"];
     $post=$_POST["post"];
@@ -21,12 +21,12 @@ if( isset($_POST["tags"]))
     $updateOffre= new offre($post,$salairePropose,$qualification,$lieuTravail,$idRecruteur,$idCategorie,$idTags,$id);
     $updateOffre->updateOffre();
     $_SESSION["offre"]=$updateOffre->readOffre();
-    print_r($updateOffre);
+    // print_r($updateOffre);
   
     header("Location:../../Views/recruteur/index.php");
     exit();
 
-    
+}
    
 
 //   $post=$_POST["post"];
@@ -45,4 +45,3 @@ if( isset($_POST["tags"]))
 //   header("Location:../../Views/recruteur/index.php");
 //   exit();
 
-}
