@@ -16,7 +16,7 @@ class Offre
     private $deleteAt;
     private $data;
     
-     public function __construct($poste="",$salairePropose="",$qualification="",$lieuTravail="",$idRecruteur="",$idCategorie="",$idTags=[],$id="")
+     public function __construct($poste="",$salairePropose="",$qualification="",$lieuTravail="",$idRecruteur="",$idCategorie="",array $idTags=[],$id="")
      {
         $this->poste=$poste;
         $this->salairePropose=$salairePropose;
@@ -34,7 +34,6 @@ class Offre
             "id_categorie"=>$this->idCategorie,
             "id_recruteur"=>$this->idRecruteur
         ];
-
      }
         
      public function getId(){return  $this->id;}

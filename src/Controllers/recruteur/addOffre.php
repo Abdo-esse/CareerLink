@@ -18,12 +18,14 @@ if(isset($_SESSION["userid"]) && isset($_POST["submit"]))
   $idCategorie=$_POST["categorie"];
   $lieuTravail=$_POST["lieu"];
   $idTags=$_POST["tags"];
+  print_r($idTags);
+
   $creatAt=date("Y-m-d");
   $idRecruteur=$_SESSION["userid"];
   $offre= new offre($post,$salairePropose,$qualification,$lieuTravail,$idRecruteur,$idCategorie,$creatAt,$idTags);
   $offre->addOffre();
   $_SESSION["offre"]=$offre->readOffre();
-//   print_r($_SESSION["offre"]);
+  print_r($_SESSION["offre"]);
 
   header("Location:../../Views/recruteur/index.php");
   exit();
