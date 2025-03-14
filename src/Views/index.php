@@ -1,18 +1,6 @@
-<?php
+<?php 
+ session_start();
 
-require __DIR__ . '/../../vendor/autoload.php'; 
-// include __DIR__ . '/pages/navbar.php';
-
-// use App\Classes\App; 
-
-// $app = new App();
-// echo $app->greet();
-use App\Config\Connexion;
-
-
-// if (Connexion::connexion()!==null){
-//     echo 'nadi';
-// }
 ?>
 
 <!DOCTYPE html>
@@ -42,10 +30,10 @@ use App\Config\Connexion;
             </li>
         </ul>
         <div class="nav-buttons">
-            <a href="../auth/login.php" class="btn login-btn">Log In</a>
+  
+            <a href="./auth/login.php" class="btn login-btn">Log In</a>
             <a href="./pages/signupPage.php" class="btn signup-btn">Sign Up</a>
         </div>
     </nav>
 </body>
 </html>
-
